@@ -85,6 +85,7 @@ func getK8sKeyringSetup() (keyring.Keyring, error) {
 		ServiceName:              "K8sPixyAuth",
 		KeychainName:             "k8s-pixy-auth",
 		KeychainTrustApplication: true,
+		KeychainPasswordFunc:     k8sTerminalPrompt,
 		FilePasswordFunc:         k8sTerminalPrompt,
 		FileDir:                  "~/.k8s-pixy-auth",
 	})
